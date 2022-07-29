@@ -1,9 +1,10 @@
 ﻿using KlickitTask.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace KlickitTask.Data
 {
-    public class KlickitTaskEnteties: DbContext
+    public class KlickitTaskEnteties: IdentityDbContext<ApplicationUser>
     {
         public KlickitTaskEnteties():base() { }
         public KlickitTaskEnteties(DbContextOptions options) : base(options) { }
