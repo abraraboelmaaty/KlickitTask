@@ -14,7 +14,7 @@ namespace KlickitTask.Models
         [JsonIgnore]
         public Admin? admin { get; set; }
         [JsonIgnore]
-        public List<Product> Products { get; set; }
+        public List<Product>? Products { get; set; }
 
     }
 }

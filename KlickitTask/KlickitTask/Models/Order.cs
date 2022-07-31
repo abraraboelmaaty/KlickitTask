@@ -7,7 +7,9 @@ namespace KlickitTask.Models
     {
         public int Id { get; set; }
         public string OrderAddress { get; set; }
-        public double  TotalPrice { get; set; }
+        [JsonIgnore]
+        public double? TotalPrice { get { return products?.Sum(p => p.Price); } }
+       
         [ForeignKey("customer")]
         [JsonIgnore]
         public int? CustomerId { get; set; }

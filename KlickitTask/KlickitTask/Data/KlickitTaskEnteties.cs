@@ -24,8 +24,14 @@ namespace KlickitTask.Data
                 .HasDiscriminator<UserType>("userRole")
                 .HasValue<Admin>(UserType.Admin)
                 .HasValue<Customer>(UserType.Customer);
+
+          
         }
 
 
     }
 }
+
+
+
+

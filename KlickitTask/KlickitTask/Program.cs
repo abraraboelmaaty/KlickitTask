@@ -24,7 +24,14 @@ builder.Services.AddDbContext<KlickitTaskEnteties>(n => n
                 .UseSqlServer(builder.Configuration.GetConnectionString("KlickitTaskConn"))
                 .UseDiscriminatorCheckConstraints()
                 .UseEnumCheckConstraints());
+
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IService<Product>, ProductService>();
+builder.Services.AddScoped<IServiceGetByName<Product>, ProductService>();
+builder.Services.AddScoped<IService<Category>, CategoryService>();
+builder.Services.AddScoped<IService<Order>, OrderService>();
+
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

@@ -1,4 +1,6 @@
-﻿namespace KlickitTask.Models
+﻿using System.Text.Json.Serialization;
+
+namespace KlickitTask.Models
 {
     public class Product
     {
@@ -7,8 +9,10 @@
         public string Description { get; set; }
         public double Price { get; set; }
         public string Image { get; set; }
-        public List<Order> Orders { get; set; }
-        public List<Category> Categories { get; set; }
+        [JsonIgnore]
+        public List<Order>? Orders { get; set; }
+        [JsonIgnore]
+        public List<Category>? Categories { get; set; }
 
     }
 }
